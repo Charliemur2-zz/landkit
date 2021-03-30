@@ -32,77 +32,61 @@
       display: flex;
       width: 50%;
     }
-  }
-  .navbar--mobile {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-  }
-  .navbar__list {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include responsive-page(md) {
+    &--mobile {
       width: 100%;
-      height: 30px;
-      flex-direction: row;
-      justify-content: flex-end;
-      height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
     }
-  }
-  .navbar__item {
-    margin: 30px 0;
-    @include responsive-page(md) {
-      margin: 0 20px;
+    &__list {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include responsive-page(md) {
+        width: 100%;
+        height: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: unset;
+      }
     }
-    @include responsive-page(mdtop) {
-      margin: 0 10px;
+    &__item {
+      margin: 30px 0;
+      @include responsive-page(md) {
+        margin: 0 20px;
+      }
+      @include responsive-page(mdtop) {
+        margin: 0 10px;
+      }
     }
-  }
-  .navbar__item--active {
-    /* border-bottom: var(--brand-purpple) 3px solid; */
-  }
-  
-  .navbar__contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 40px;
-    margin: 20px 0;
-    border: black 1px solid;
-    border-radius: 10px;
-    /* background-color: var(--brand-purpple); */
-    @include responsive-page(md) {
-      margin: 20px 10px;
-      border: none;
+    &__item--active {
+      /* border-bottom: var(--brand-purpple) 3px solid; */
+    }
+    
+    &__contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 40px;
+      margin: 20px 0;
+      border: black 1px solid;
       border-radius: 10px;
-    }
-  }
-  .navbar__contact:hover {
-    /* background-color: var(--white-primary); */
-    @include responsive-page(md) {
       /* background-color: var(--brand-purpple); */
-      color: var(--white-primary); 
+      @include responsive-page(md) {
+        margin: 20px 10px;
+        border: none;
+        border-radius: 10px;
+      }
     }
-  }
-  .navbar__contact-link {
-    height: 100%;
-    /* color: var(--white-primary); */
-    padding-top: 8px;
-    @include responsive-page(md) {
-      /* color: var(--text-primary); */
-      margin: 0 10px;
-      padding-top: 9px;
-    }
-  }
-  .navbar__contact-link:hover {
-    /* color: var(--brand-purpple); */
-    @include responsive-page(md) {
-      /* color: var(--white-primary);  */
+    &__contact:hover {
+      /* background-color: var(--white-primary); */
+      @include responsive-page(md) {
+        /* background-color: var(--brand-purpple); */
+        color: var(--white-primary); 
+      }
     }
   }
   .hamburger-btn {
