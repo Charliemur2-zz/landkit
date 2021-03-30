@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css?v=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>Landkit | Blog and Articles</title>
+</head>
+<body>
+  <header class="header js-header">
+    <div class="wrapper">
+      <div class="header-container">
+        <div class="logo" role="img">
+          <a href="#" class="logo__link" role="link">
+            <img class="logo__img" src="./images/logo.svg" alt="landify logo">
+          </a>
+        </div>
+        <button class="hamburger-btn js-hamburguer-btn" role="button"  aria-label="hamburguer menu"   onclick="showMenu()">
+          <svg viewBox="0 0 100 80" width="20" height="20">
+            <rect width="100" height="20" rx="8"></rect>
+            <rect y="30" width="100" height="20" rx="8"></rect>
+            <rect y="60" width="100" height="20" rx="8"></rect>
+          </svg>
+        </button>
+        <button class="x-btn x-btn--clicked js-x-btn" role="button"  aria-label="close menu"   onclick="showMenu()">
+          <svg fill="none" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#18191F" stroke-linecap="round" stroke-width="3">
+              <path d="M1.515 2.015l16.97 16.97M2 18.97L18.97 2"/>
+            </g>
+          </svg>
+        </button>
+        <nav class="navbar js-navbar" role="navigation">
+          <ul class="navbar__list js-navbar-list">
+            <li class="navbar__item js-navbar-item" role="menuitem">
+              <a href="#" class="navbar__item-link" role="link">Articles</a>
+            </li>
+            <li class="navbar__item js-navbar-item" role="menuitem">
+              <a href="#" class="navbar__item-link" role="link">Favorites</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div> 
+  </header>
+  <main class="main-content">
+    <div class="wrapper">
+      <div class="container">
+        <form action="search" class=""></form>
+        <section class="articles"></section>
+        <button class="load-more-btn"></button>
+      </div>
+    </div>
+    <section class="height-section"></section>
+  </main>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>

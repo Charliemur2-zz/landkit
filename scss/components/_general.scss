@@ -1,0 +1,31 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a { 
+  &, &:link {
+    text-decoration: none;
+  }
+  &:focus { border: none; }
+}
+button {
+  border-style: none;
+}
+button:focus {
+  outline: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin:0 auto;
+}
+.height-section {
+  height: 2000px;
+}
