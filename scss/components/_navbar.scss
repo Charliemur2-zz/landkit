@@ -12,25 +12,34 @@
   background-color: white;
   padding: 20px 0;
   @include responsive-page(md) {
-    height: 88px;
-    padding: 30px 60px;
+    padding: 0;
   }
   @include responsive-page(mdtop) {
-    padding: 10px 142px 0px 166px;
-    height: 54px;
+    padding: 0;
   }
+
   .logo {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     @include responsive-page(md) {
-      width: 50%;
+      width: 40%;
+      justify-content: center;
+    }
+    @include responsive-page(mdtop) {
+      width: 35%;
+      justify-content: center;
     }
   }
   .navbar {
     display: none;
     @include responsive-page(md) {
       display: flex;
-      width: 50%;
+      width: 60%;
+    }
+    @include responsive-page(mdtop) {
+      display: flex;
+      width: 65%;
     }
     &--mobile {
       width: 100%;
@@ -46,47 +55,36 @@
       align-items: center;
       @include responsive-page(md) {
         width: 100%;
-        height: 30px;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        height: unset;
+      }
+      @include responsive-page(mdtop) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
         height: unset;
       }
     }
     &__item {
-      margin: 30px 0;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 1.06rem;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 20px 0;
+      color: $gray-700;
       @include responsive-page(md) {
-        margin: 0 20px;
+        padding: 25px 20px;
       }
       @include responsive-page(mdtop) {
-        margin: 0 10px;
+        padding: 20px 20px;
       }
     }
     &__item--active {
-      /* border-bottom: var(--brand-purpple) 3px solid; */
-    }
-    
-    &__contact {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 40px;
-      margin: 20px 0;
-      border: black 1px solid;
-      border-radius: 10px;
-      /* background-color: var(--brand-purpple); */
-      @include responsive-page(md) {
-        margin: 20px 10px;
-        border: none;
-        border-radius: 10px;
-      }
-    }
-    &__contact:hover {
-      /* background-color: var(--white-primary); */
-      @include responsive-page(md) {
-        /* background-color: var(--brand-purpple); */
-        color: var(--white-primary); 
-      }
+      color: $primary-color;
     }
   }
   .hamburger-btn {
@@ -97,6 +95,9 @@
     @include responsive-page(md) {
       display: none;
     }
+    @include responsive-page(mdtop) {
+      display: none;
+    }
   }
   .x-btn {
     display: flex;
@@ -104,6 +105,9 @@
     align-items: center;
     background-color: white;
     @include responsive-page(md) {
+      display: none;
+    }
+    @include responsive-page(mdtop) {
       display: none;
     }
   }
