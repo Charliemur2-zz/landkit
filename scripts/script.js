@@ -64,3 +64,51 @@ function disableScroll() {
 function enableScroll() {
   document.body.style.overflow = null;
 }
+/* FETCHING DATA */
+let i = 6;
+const container = document.querySelector('.js-blogs');
+const searchForm = document.querySelector('.js-search');
+const loadMoreBtn = document.querySelector('.js-load-more');
+function loadMore() {
+  i += 3;
+  renderPosts();
+  
+}
+const renderPosts = async (term) => {
+  let uri = `http://localhost:3000/posts?_limit=${i}`;
+  if (term) {
+    uri += `&q=${term}`;
+  }
+  const res = await fetch(uri);
+  const posts = await res.json();
+  if (i > posts.length) {
+    loadMoreBtn.classList.add('load-more--disable');
+  }
+  let template = '';
+  posts.forEach(post => {
+    template += `
+      <div class="post" role="card" onclick="linkToArticle()">
+        <div class="post__img">
+          <img class="post__img-item" src="${post.img}" alt="article photo" role="img"/>
+        </div>
+        <div class="post__body">
+          <h3 class="post__title" role="text">${post.title}</h3>
+          <p class="post__content role="text">${post.content.slice(0, 80)}...</p>
+          <div class="post__author">
+            <img class="post__author-photo" src="${post.author.photo}" alt="article photo" role="img"/>
+            <p class="post__author-name" role="text">${post.author.name}</p>
+            <p class="post__date" role="text">${post.pubDate}</p>
+          </div>
+        </div>
+      </div>
+    `
+  });
+  container.innerHTML = template;
+}
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  renderPosts(searchForm.term.value.trim());
+});
+
+window.addEventListener('DOMContentLoaded', () => renderPosts());
+
