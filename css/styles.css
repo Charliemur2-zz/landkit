@@ -123,18 +123,15 @@ ul, li {
   margin: 0 auto;
 }
 
-.height-section {
-  height: 2000px;
-}
-
 /** Mixin for media queries
     Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
 */
 /* -------HEADER styles-------- */
 .header--scrolled {
-  /* background-color: var(--brand-turquoise-back); */
+  background-color: white;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .header-container {
@@ -277,6 +274,160 @@ ul, li {
 }
 .header-container .hamburger-btn--scrolled, .header-container .x-btn--scrolled {
   /* background-color: var(--brand-turquoise-back); */
+}
+
+.main-content {
+  width: 100%;
+  background-color: #E5E5E5;
+}
+.main-content .container {
+  width: 100%;
+  padding: 5% 15%;
+}
+.main-content .container .blogs {
+  padding: 20px 0;
+  display: grid;
+  grid-gap: 33px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main-content .container .blogs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-content .container .blogs {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.main-content .container .post {
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  box-shadow: 0px 24px 64px rgba(22, 27, 45, 0.05);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.main-content .container .post__body {
+  padding: 25px;
+  display: grid;
+  grid-gap: 15px;
+}
+.main-content .container .post__img-item {
+  width: 100%;
+  height: 205px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main-content .container .post__img-item {
+    height: unset;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-content .container .post__img-item {
+    height: unset;
+  }
+}
+.main-content .container .post__title {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: #161B2D;
+}
+.main-content .container .post__content {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #6B7C93;
+}
+.main-content .container .post__author {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 1fr;
+  border-top: 1px solid #F3F7FB;
+  padding: 18px 0 0 0;
+}
+.main-content .container .post__author-photo {
+  width: 24px;
+  border-radius: 20px;
+}
+.main-content .container .post__author-name, .main-content .container .post__author .post__date {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #6B7C93;
+  opacity: 0.7;
+}
+.main-content .search {
+  box-shadow: 0px 8px 24px rgba(22, 27, 45, 0.1);
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 8px 12px;
+  align-items: center;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main-content .search {
+    grid-template-columns: 0.1fr 2fr 0.5fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-content .search {
+    grid-template-columns: 0.1fr 2fr 0.2fr;
+  }
+}
+.main-content .search__input {
+  border: none;
+  padding: 8px 0;
+}
+.main-content .search__input ::placeholder {
+  font-style: italic;
+}
+.main-content .search__input:focus {
+  outline: none;
+}
+.main-content .search__btn {
+  background: #335EEA;
+  border-radius: 6px;
+  padding: 8px;
+  color: white;
+  max-width: 84px;
+}
+.main-content .load-more {
+  max-width: 571px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border: #506690 solid 1px;
+  border-radius: 6px;
+  padding: 10px 0;
+  margin: 95px auto;
+  cursor: pointer;
+}
+.main-content .load-more__btn {
+  background-color: #E5E5E5;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #335EEA;
+  cursor: pointer;
+}
+.main-content .load-more__arrow {
+  position: absolute;
+  right: 8px;
+  top: 34%;
+}
+.main-content .load-more--disable {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
