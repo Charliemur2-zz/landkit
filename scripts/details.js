@@ -1,3 +1,4 @@
+/* Java Script for details page, whole article */
 /* NAVBAR */
 /* getting elements */
 const navBar = document.querySelector('.js-navbar');
@@ -64,55 +65,50 @@ function disableScroll() {
 function enableScroll() {
   document.body.style.overflow = null;
 }
-/* FETCHING DATA */
-let i = 6;
-const container = document.querySelector('.js-blogs');
-const searchForm = document.querySelector('.js-search');
-const loadMoreBtn = document.querySelector('.js-load-more');
-function loadMore() {
-  i += 3;
-  renderPosts();
-  
-}
-const renderPosts = async (term) => {
-  let uri = `http://localhost:3000/posts?_limit=${i}`;
-  if (term) {
-    uri += `&q=${term}`;
-  }
-  const res = await fetch(uri);
-  const posts = await res.json();
-  if (i > posts.length) {
-    loadMoreBtn.classList.add('load-more--disable');
-  }
 
-  let template = '';
-  posts.forEach(post => {
-    template += `
-      <a href="./../details.html?id=${post.id}">
-        <div class="post" role="card">
-          <div class="post__img">
-            <img class="post__img-item" src="${post.img}" alt="article photo" role="img"/>
-          </div>
-          <div class="post__body">
-            <h3 class="post__title" role="text">${post.title}</h3>
-            <p class="post__content" role="text">${post.content.slice(0, 80)}...</p>
-            <div class="post__author">
-              <img class="post__author-photo" src="${post.author.photo}" alt="article photo" role="img"/>
-              <p class="post__author-name" role="text">${post.author.name}</p>
-              <p class="post__date" role="text">${post.pubDate}</p>
-            </div>
+/* FETCHING DATA */
+const id = new URLSearchParams(window.location.search).get('id');
+const container = document.querySelector('.js-whole-article');
+
+const renderDetails = async () => {
+  const res = await fetch(`http://localhost:3000/posts/${id}`);
+  const post = await res.json();
+  
+  const template = `
+    <div class="whole-post">
+      <h1 class="whole-post__title">${post.title}</h1>
+      <p class="whole-post__synopsis">${post.sinopsys}</p>
+      <div class="post__author">
+        <div class="post__author-info">
+          <img class="post__author-photo" src="${post.author.photo}" alt="article photo" role="img"/>
+          <div class="post__author-text">
+          <p class="post__author-name" role="text">${post.author.name}</p>
+          <p class="post__date" role="text">Published on ${post.pubDate}</p>
           </div>
         </div>
-      </a>
-    `
-  });
-
+        <div class="post__author-social">
+          <p class="social-words">share</p>
+          <div class="social-logos">
+            <a class="social-link">
+              <img class="social__img" role="img" src="./images/instagram.svg" alt="instagram logo"/>
+            </a>
+            <a class="social-link">
+              <img class="social__img" role="img" src="./images/facebook.svg" alt="facebook logo"/>
+            </a>
+            <a class="social-link">
+              <img class="social__img" role="img" src="./images/twitter.svg" alt="twitter logo"/>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="post__img">
+        <img class="post__img-item" src="${post.img.picture}" alt="article photo" role="img"/>
+        <p class="post__img-reference">${post.img.reference}</p>
+      </div>
+      <p class="post__content" role="text">${post.content}</p>
+    </div>
+  `
   container.innerHTML = template;
 }
-searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  renderPosts(searchForm.term.value.trim());
-});
 
-window.addEventListener('DOMContentLoaded', () => renderPosts());
-
+window.addEventListener('DOMContentLoaded', () => renderDetails());
