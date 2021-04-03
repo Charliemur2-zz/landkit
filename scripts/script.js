@@ -91,7 +91,7 @@ const renderPosts = async (term) => {
       <a href="./../details.html?id=${post.id}">
         <div class="post" role="card">
           <div class="post__img">
-            <img class="post__img-item" src="${post.img}" alt="article photo" role="img"/>
+            <img class="post__img-item" src="${post.img.picture}" alt="article photo" role="img"/>
           </div>
           <div class="post__body">
             <h3 class="post__title" role="text">${post.title}</h3>
