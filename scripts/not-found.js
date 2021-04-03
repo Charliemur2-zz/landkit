@@ -70,7 +70,7 @@ const container = document.querySelector('.js-blogs');
 const searchForm = document.querySelector('.js-search');
 const loadMoreBtn = document.querySelector('.js-load-more');
 const searchBtn = document.querySelector('.js-search-btn');
-function loadMore() {
+/* function loadMore() {
   i += 3;
   renderPosts();
   
@@ -112,15 +112,16 @@ const renderPosts = async (term) => {
   });
 
   container.innerHTML = template;
-}
+} */
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  renderPosts(searchForm.term.value.trim());
+  window.location.href="./index.html";
+  /* renderPosts(searchForm.term.value.trim()); */
 });
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  renderPosts(searchForm.term.value.trim());
+  window.location.href="./index.html";
+ /*  renderPosts(searchForm.term.value.trim()); */
 });
 
-window.addEventListener('DOMContentLoaded', () => renderPosts());
-
+/* window.addEventListener('DOMContentLoaded', () => renderPosts()); */
