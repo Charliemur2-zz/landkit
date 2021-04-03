@@ -1,3 +1,4 @@
+
 /* NAVBAR */
 /* getting elements */
 const navBar = document.querySelector('.js-navbar');
@@ -70,6 +71,7 @@ const container = document.querySelector('.js-blogs');
 const searchForm = document.querySelector('.js-search');
 const loadMoreBtn = document.querySelector('.js-load-more');
 const searchBtn = document.querySelector('.js-search-btn');
+localStorage.setItem('OUTTERM', null);
 /* function loadMore() {
   i += 3;
   renderPosts();
@@ -113,13 +115,21 @@ const renderPosts = async (term) => {
 
   container.innerHTML = template;
 } */
-searchForm.addEventListener('submit', (e) => {
+/* searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  window.location.href="./index.html";
+  console.log(e);
+  const outTerm = searchForm.term.value.trim();
+  console.log(outTerm);
+  localStorage.setItem('OUTTERM', outTerm); */
+ /*  window.location.href=`./index.html?term=${searchForm.term.value.trim()}`; */
   /* renderPosts(searchForm.term.value.trim()); */
-});
+/* }); */
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  console.log(e);
+  const outTerm = searchForm.term.value.trim();
+  console.log(outTerm);
+  localStorage.setItem('OUTTERM', outTerm);
   window.location.href="./index.html";
  /*  renderPosts(searchForm.term.value.trim()); */
 });

@@ -72,12 +72,14 @@ const loadMoreBtn = document.querySelector('.js-load-more');
 const searchBtn = document.querySelector('.js-search-btn');
 function loadMore() {
   i += 3;
-  renderPosts();
-  
+  renderPosts();  
 }
 const renderPosts = async (term) => {
   let uri = `http://localhost:3000/posts?_limit=${i}`;
-  if (term) {
+  
+  if (localStorage.OUTTERM !== 'null') {
+    uri += `&q=${localStorage.OUTTERM}`;
+  } else if (term) {
     uri += `&q=${term}`;
   }
   const res = await fetch(uri);
@@ -88,7 +90,7 @@ const renderPosts = async (term) => {
   if (i > posts.length) {
     loadMoreBtn.classList.add('load-more--disable');
   }
-
+  localStorage.setItem('OUTTERM', null);
   let template = '';
   posts.forEach(post => {
     template += `
@@ -113,10 +115,10 @@ const renderPosts = async (term) => {
 
   container.innerHTML = template;
 }
-searchForm.addEventListener('submit', (e) => {
+/* searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   renderPosts(searchForm.term.value.trim());
-});
+}); */
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
   renderPosts(searchForm.term.value.trim());
