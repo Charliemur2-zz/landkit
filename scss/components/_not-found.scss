@@ -1,0 +1,80 @@
+.not-found {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+  padding-top: 100px;
+  height: 100vh;
+  @include responsive-page(md) {
+    height: unset;
+  }
+  @include responsive-page(mdtop) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  &__picture {
+    width: 100%;
+  }
+  &__info {
+    display: grid;
+    @include responsive-page(md) {
+      grid-template-rows: 1fr 0.2fr;
+    }
+    @include responsive-page(mdtop) {
+      grid-template-rows: 0.1fr 0.1fr;
+      padding-top: 100px;
+    }
+    &-title {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 52px;
+      line-height: 61px;
+      align-items: center;
+      text-align: center;
+      letter-spacing: -0.01em;
+      color: #12263F;
+    }
+    &-paragraph {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 26px;
+      align-items: center;
+      text-align: center;
+      color: $gray-700;
+      padding: 20px 0;
+      @include responsive-page(md) {
+        padding: 20px;
+        max-width: 410px;
+        margin: 0 auto;
+      }
+      @include responsive-page(mdtop) {
+        padding: 20px 55px;
+        max-width: 410px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__safety {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    background: $primary-color;
+    border-radius: 6px;
+    padding: 17px 0;
+    width: 153px;
+    height: 50px;
+    &-link {
+      color: white;
+    }
+  }
+  &__text {
+    justify-content: center;
+    align-items: center;
+  }
+  &__img {
+    padding: 50px 0;
+    @include responsive-page(md) {
+      padding: 80px 0;
+    }
+  }
+}
