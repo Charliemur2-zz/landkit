@@ -72,66 +72,12 @@ const searchForm = document.querySelector('.js-search');
 const loadMoreBtn = document.querySelector('.js-load-more');
 const searchBtn = document.querySelector('.js-search-btn');
 localStorage.setItem('OUTTERM', null);
-/* function loadMore() {
-  i += 3;
-  renderPosts();
-  
-}
-const renderPosts = async (term) => {
-  let uri = `http://localhost:3000/posts?_limit=${i}`;
-  if (term) {
-    uri += `&q=${term}`;
-  }
-  const res = await fetch(uri);
-  const posts = await res.json();
-  if (posts.length === 0) {
-    window.location.href='./not-found.html';
-  }
-  if (i > posts.length) {
-    loadMoreBtn.classList.add('load-more--disable');
-  }
 
-  let template = '';
-  posts.forEach(post => {
-    template += `
-      <a href="./../details.html?id=${post.id}">
-        <div class="post" role="card">
-          <div class="post__img">
-            <img class="post__img-item" src="${post.img.picture}" alt="article photo" role="img"/>
-          </div>
-          <div class="post__body">
-            <h3 class="post__title" role="text">${post.title}</h3>
-            <p class="post__content" role="text">${post.content.slice(0, 80)}...</p>
-            <div class="post__author">
-              <img class="post__author-photo" src="${post.author.photo}" alt="article photo" role="img"/>
-              <p class="post__author-name" role="text">${post.author.name}</p>
-              <p class="post__date" role="text">${post.pubDate}</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    `
-  });
-
-  container.innerHTML = template;
-} */
-/* searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  console.log(e);
-  const outTerm = searchForm.term.value.trim();
-  console.log(outTerm);
-  localStorage.setItem('OUTTERM', outTerm); */
- /*  window.location.href=`./index.html?term=${searchForm.term.value.trim()}`; */
-  /* renderPosts(searchForm.term.value.trim()); */
-/* }); */
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
   console.log(e);
   const outTerm = searchForm.term.value.trim();
   console.log(outTerm);
   localStorage.setItem('OUTTERM', outTerm);
-  window.location.href="./index.html";
- /*  renderPosts(searchForm.term.value.trim()); */
+  window.location.href="./index.html"; 
 });
-
-/* window.addEventListener('DOMContentLoaded', () => renderPosts()); */
