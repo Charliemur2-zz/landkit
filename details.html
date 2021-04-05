@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css?v=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <title>Landkit | Blog and Articles</title>
+  <title>Landkit / Article Details | Blog and Articles</title>
 </head>
 <body>
   <header class="header js-header">
@@ -34,7 +34,7 @@
         <nav class="navbar js-navbar" role="navigation">
           <ul class="navbar__list js-navbar-list">
             <li class="navbar__item" role="menuitem">
-              <a href="#" class="navbar__item-link js-navbar-item" role="link">Articles</a>
+              <a href="./index.html" class="navbar__item-link js-navbar-item" role="link">Articles</a>
             </li>
             <li class="navbar__item" role="menuitem">
               <a href="./favorites.html" class="navbar__item-link js-navbar-item" role="link">Favorites</a>
@@ -46,31 +46,13 @@
   </header>
   <main class="main-content">
     <div class="wrapper">
-      <div class="container">
-        <form class="search js-search" role="search">
-          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.70833 15.0417C12.2061 15.0417 15.0417 12.2061 15.0417 8.70833C15.0417 5.21053 12.2061 2.375 8.70833 2.375C5.21053 2.375 2.375 5.21053 2.375 8.70833C2.375 12.2061 5.21053 15.0417 8.70833 15.0417Z" stroke="#869AB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16.6249 16.625L13.1812 13.1813" stroke="#869AB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <input class="search__input" type="text" placeholder="search" name="term" role="term">
-          <button class="search__btn js-search-btn" role="button">search</button>
-        </form>
-        <section class="articles">
-          <div class="blogs js-blogs" role="article">
-
-          </div>
-        </section>
-        <div class="load-more js-load-more">
-          <button class="load-more__btn" onclick="loadMore()">load more</button>
-          <div class="load-more__arrow">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.52642 0.21967C6.23353 -0.0732233 5.75866 -0.0732233 5.46576 0.21967C5.17287 0.512563 5.17287 0.987437 5.46576 1.28033L9.43543 5.25H0.75C0.335786 5.25 0 5.58579 0 6C0 6.41421 0.335786 6.75 0.75 6.75H9.43543L5.46576 10.7197C5.17287 11.0126 5.17287 11.4874 5.46576 11.7803C5.75866 12.0732 6.23353 12.0732 6.52642 11.7803L11.7328 6.57398C11.8962 6.4364 12 6.23033 12 6C12 5.76967 11.8962 5.56359 11.7328 5.42601L6.52642 0.21967Z" fill="#335EEA"/>
-            </svg>
-          </div>
+      <div class="whole-article">
+        <div class="wrapper-medium js-whole-article">
+    
         </div>
       </div>
     </div>
   </main>
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/details.js"></script>
 </body>
 </html>
