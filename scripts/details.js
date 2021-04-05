@@ -81,7 +81,7 @@ function getFavoritesIds() {
 }
 
 const renderDetails = async () => {
-  const res = await fetch(`http://localhost:3000/posts/${id}`);
+  const res = await fetch(`https://landkitdb.herokuapp.com/posts/${id}`);
   const post = await res.json();
   
   const template = `

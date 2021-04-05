@@ -80,7 +80,7 @@ arrayIds = Array.from(favoriteIds).map( elemento => parseFloat(elemento));
 arrayIds = arrayIds.filter(Number);
 console.log(arrayIds);
 const renderPosts = async (term) => {
-  let uri = "http://localhost:3000/posts";
+  let uri = "https://landkitdb.herokuapp.com/posts";
 /*   if (localStorage.OUTTERM !== 'null') {
     uri += `&q=${localStorage.OUTTERM}`;
   } else if (term) {

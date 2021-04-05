@@ -77,7 +77,7 @@ function loadMore() {
   renderPosts();  
 }
 const renderPosts = async (term) => {
-  let uri = `http://localhost:3000/posts?_limit=${i}`;
+  let uri = `https://landkitdb.herokuapp.com/posts?_limit=${i}`;
   if (localStorage.OUTTERM !== 'null') {
     uri += `&q=${localStorage.OUTTERM}`;
   } else if (term) {
@@ -105,6 +105,9 @@ const renderPosts = async (term) => {
           </div>
           <div class="post__img">
             <img class="post__img-item" src="${post.img.picture}" alt="article photo" role="img"/>
+          </div>
+          <div class="wave">
+          
           </div>
           <div class="post__body">
             <h3 class="post__title" role="text">${post.title}</h3>
