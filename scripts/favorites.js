@@ -81,21 +81,21 @@ arrayIds = arrayIds.filter(Number);
 console.log(arrayIds);
 const renderPosts = async (term) => {
   let uri = "https://landkitdb.herokuapp.com/posts";
-/*   if (localStorage.OUTTERM !== 'null') {
-    uri += `&q=${localStorage.OUTTERM}`;
+  if (localStorage.OUTTERM !== 'null') {
+    uri += `?q=${localStorage.OUTTERM}`;
   } else if (term) {
-    uri += `&q=${term}`;
-  } */
+    uri += `?q=${term}`;
+  }
   const res = await fetch(uri);
   const posts = await res.json();
-  /* if (posts.length === 0) {
+  if (posts.length === 0) {
     window.location.href='./not-found.html';
   }
-  if (i > posts.length) {
+  /* if (i > posts.length) {
     loadMoreBtn.classList.add('load-more--disable');
   } */
 
- /*  localStorage.setItem('OUTTERM', null); */
+  localStorage.setItem('OUTTERM', null);
   let template = '';
   posts.forEach(post => {
     for (let i = 0; i < arrayIds.length; i++){

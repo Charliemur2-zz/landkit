@@ -106,9 +106,6 @@ const renderPosts = async (term) => {
           <div class="post__img">
             <img class="post__img-item" src="${post.img.picture}" alt="article photo" role="img"/>
           </div>
-          <div class="wave">
-          
-          </div>
           <div class="post__body">
             <h3 class="post__title" role="text">${post.title}</h3>
             <p class="post__content" role="text">${post.content.slice(0, 80)}...</p>
