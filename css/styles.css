@@ -127,6 +127,10 @@ ul, li {
     Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
 */
 /* -------HEADER styles-------- */
+.header {
+  z-index: 8;
+}
+
 .header--scrolled {
   background-color: white;
   position: fixed;
@@ -307,6 +311,7 @@ ul, li {
   position: absolute;
   right: 12px;
   top: 10px;
+  z-index: 1;
 }
 .main-content .container .post__body {
   padding: 25px;
