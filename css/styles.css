@@ -301,6 +301,13 @@ ul, li {
   box-shadow: 0px 24px 64px rgba(22, 27, 45, 0.05);
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
+}
+.main-content .container .post .star {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  z-index: 4;
 }
 .main-content .container .post__body {
   padding: 25px;
@@ -436,6 +443,7 @@ ul, li {
 
 .wrapper-medium {
   width: 100%;
+  position: relative;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapper-medium {
@@ -460,6 +468,14 @@ ul, li {
   .whole-post {
     padding: 100px 0;
   }
+}
+.whole-post .star {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.whole-post .star--clicked {
+  fill: #FFC726;
 }
 .whole-post__title {
   font-style: normal;

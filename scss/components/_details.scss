@@ -3,6 +3,7 @@
 }
 .wrapper-medium {
   width: 100%;
+  position: relative;
   @include responsive-page(md) {
     max-width: 680px;
     margin: 0 auto;
@@ -19,6 +20,14 @@
   padding: 100px 20px;
   @include responsive-page(mdtop) {
     padding: 100px 0;
+  }
+  .star {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  .star--clicked {
+    fill: #FFC726;
   }
   &__title {
     font-style: normal;
